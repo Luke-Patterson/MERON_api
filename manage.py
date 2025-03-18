@@ -1,8 +1,15 @@
 #!/usr/bin/env python
 import os
 import sys
+import environ
 
 if __name__ == '__main__':
+    # Load .env file
+    env = environ.Env()
+    env_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
+    if os.path.isfile(env_file):
+        env.read_env(env_file)
+        
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'meron_api.settings.development')
 
     try:

@@ -122,3 +122,13 @@ It is also possible to run the development server without Docker by following th
 To access the locally running copy of the API, you can use `localhost:8000` in development mode.
 In production mode, it is necessary to add an entry to your `hosts` file that resolves a domain to the IP Docker uses: `172.33.0.2       meron.localdomain`.
 Now you can access the API running on your local computer under: [http://meron.localdomain](http://meron.localdomain).
+
+
+### 2025 Update 
+You need to create a .env file with the following variables:
+DJANGO_SECRET_KEY=[create your own secret key]
+DJANGO_DEBUG=True
+DJANGO_SETTINGS_MODULE=meron_api.settings.development
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+
+After local deployment is complete, run request_classification.py to test if it works.
