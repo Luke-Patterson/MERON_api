@@ -125,10 +125,16 @@ Now you can access the API running on your local computer under: [http://meron.l
 
 
 ### 2025 Update 
-You need to create a .env file with the following variables:
+You need to create a .env file in the repo root with the following variables:
 DJANGO_SECRET_KEY=[create your own secret key]
 DJANGO_DEBUG=True
 DJANGO_SETTINGS_MODULE=meron_api.settings.development
 DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
 
-After local deployment is complete, run request_classification.py to test if it works.
+I ran it by following these steps (on my Windows machine):
+1.  Create a virtual environment, e.g. `python -m venv .venvs/meron_api`
+2.  Activate the environment: `.venvs/meron_api/Scripts/activate`
+3.  Install the development dependencies: `pip install -r meron_api/requirements/development.txt`
+4.  Start the development server: `python manage.py runserver` 
+
+After local deployment is set up, run request_classification.py to test if it works. 
